@@ -3,7 +3,7 @@
  * @Date: 2022-05-09 13:15:39
  * @LastEditors: vibration007 dogingate@qq.com
 <<<<<<< HEAD
- * @LastEditTime: 2022-05-10 13:50:31
+ * @LastEditTime: 2022-05-11 15:56:36
 =======
  * @LastEditTime: 2022-05-09 21:30:21
 >>>>>>> edd7d2c02bbed96d94edc6902bcbaf9fc314fc3a
@@ -31,7 +31,6 @@ void bubbleSort(int *arr, int len)
     }
 }
 
-<<<<<<< HEAD
 void printArray(int *arr, int len)
 {
     for (int i = 0; i < len; i++)
@@ -49,27 +48,9 @@ struct Student
 
 void runString()
 {
-
     vector<string> msg{"Hello", "C++", "World", "from", "VS Code", "and the C++ extension!"};
-=======
-int addArray(int array[], int n);
-
-int main()
-{
-    // vector<string> msg{"Hello", "C++", "World", "from", "VS Code", "and the C++ extension!"};
-
-    // for (const string &word : msg)
-    // {
-    //     cout << word << " ";
-    // }
-    // cout << endl;
-    int data[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    int size = sizeof(data) / sizeof(data[0]);
-    int sum = addArray(data, size);
-    printf("the sum of the array is %d\n", sum);
-    return 0;
+    int addArray(int array[], int n);
 }
->>>>>>> edd7d2c02bbed96d94edc6902bcbaf9fc314fc3a
 
 int addArray(int array[], int n)
 {
@@ -122,7 +103,6 @@ void runStruct()
     cout << "name is " << p->name << " age is " << p->age << " score is " << p->score << endl;
 }
 int main()
-
 {
     runStruct();
 }
