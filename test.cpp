@@ -3,7 +3,7 @@
  * @Date: 2022-05-09 13:15:39
  * @LastEditors: vibration007 dogingate@qq.com
 <<<<<<< HEAD
- * @LastEditTime: 2022-05-11 15:56:36
+ * @LastEditTime: 2022-05-11 16:09:41
 =======
  * @LastEditTime: 2022-05-09 21:30:21
 >>>>>>> edd7d2c02bbed96d94edc6902bcbaf9fc314fc3a
@@ -102,7 +102,56 @@ void runStruct()
     struct Student *p = &students[0];
     cout << "name is " << p->name << " age is " << p->age << " score is " << p->score << endl;
 }
+
+/* 这里形参必须是int x[], 写作int[] x产生语法错误
+    n次插值Lagrange形式
+    x: 插值节点
+    y : 插值节点函数值
+    len : 插值节点个数
+    newX: 所求节点
+ */
+double
+lagrangeInterpolation(double x[], double y[], int len, double newx)
+{
+    double result = 0; // 这里要记得初始化，否则结果错
+    double L;          // lagrange interpolation polyminoal
+
+    for (int j = 0; j < len; j++)
+    {
+        // every interpolation polyminoal
+        L = y[j];
+        for (int k = 0; k < len; k++)
+        {
+            // every term
+            if (j == k)
+            {
+                continue;
+            }
+            // printf("newx[i]=%lf, x[j]=%lf, x[k]=%lf, \n (newx[i] - x[k]) / (x[j] - x[k])=%lf\n", newx[i], x[j], x[k], (newx[i] - x[k]) / (x[j] - x[k]));
+            // printf("L*(newx[i] - x[k]) / (x[j] - x[k])=%lf\n", L*(newx[i] - x[k]) / (x[j] - x[k]));
+            L *= (newx - x[k]) / (x[j] - x[k]);
+        }
+        // printf("result[%d]=%lf\n", i, result[i]);
+        result += L;
+        // printf("result[%d]=%lf ， iter=%d\n", i, result[i], j);
+
+        // printf("array[%d] is: %lf\n", i, result[i]);
+    }
+    return result;
+}
+
+void runInterp()
+{
+    double x[] = {0.46, 0.47, 0.48, 0.49};
+    int len = sizeof(x) / sizeof(x[0]);
+    double y[] = {0.4846555, 0.4937452, 0.5027498, 0.5116683};
+    double new_x = 0.472;
+    double new_y = lagrangeInterpolation(x, y, len, new_x);
+    cout << "new point is (" << new_x << ", " << new_y << ")" << endl;
+}
+
 int main()
 {
-    runStruct();
+    // runStruct();
+    runInterp();
 }
