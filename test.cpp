@@ -3,7 +3,7 @@
  * @Date: 2022-05-09 13:15:39
  * @LastEditors: vibration007 dogingate@qq.com
 <<<<<<< HEAD
- * @LastEditTime: 2022-05-11 16:09:41
+ * @LastEditTime: 2022-05-11 17:46:48
 =======
  * @LastEditTime: 2022-05-09 21:30:21
 >>>>>>> edd7d2c02bbed96d94edc6902bcbaf9fc314fc3a
@@ -11,10 +11,18 @@
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 #include <iostream>
+#include <map>
 #include <vector>
 #include <string>
 
-using namespace std;
+// using namespace std;
+using std::cin;
+using std::copy;
+using std::cout;
+using std::endl;
+using std::map;
+using std::string;
+using std::vector;
 void bubbleSort(int *arr, int len)
 {
     for (int i = 0; i < len - 1; i++)
@@ -149,9 +157,47 @@ void runInterp()
     double new_y = lagrangeInterpolation(x, y, len, new_x);
     cout << "new point is (" << new_x << ", " << new_y << ")" << endl;
 }
+bool fncomp(char lhs, char rhs)
+{
+    return lhs < rhs;
+}
 
-int main()
+struct classcomp
+{
+    bool operator()(const char &lhs, const char &rhs) { return lhs < rhs; }
+};
+
+template <typename Map>
+void printMap(Map &m)
+{
+    cout << "[";
+    for (auto &item : m)
+    {
+        cout << item.first << ":" << item.second << " ";
+    }
+    cout << "]\n";
+}
+void runMap()
+{
+    map<string, int> zd;
+    zd["1"] = 10;
+    zd["2"] = 60;
+    zd["3"] = 30;
+    zd["4"] = 90;
+    zd["5"] = 50;
+    zd.insert(std::pair<string, int>("6", 55));
+
+    map<string, int>::iterator it = zd.begin();
+
+    // for (it; it != zd.end(); it++)
+    // {
+    //     cout << it->first << ":" << it->second << endl;
+    // }
+    printMap(zd);
+}
+int main(int argc, char *argv[])
 {
     // runStruct();
-    runInterp();
+    // runInterp();
+    runMap();
 }
