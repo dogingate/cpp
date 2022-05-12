@@ -3,7 +3,7 @@
  * @Date: 2022-05-09 13:15:39
  * @LastEditors: vibration007 dogingate@qq.com
 <<<<<<< HEAD
- * @LastEditTime: 2022-05-11 17:46:48
+ * @LastEditTime: 2022-05-12 16:48:51
 =======
  * @LastEditTime: 2022-05-09 21:30:21
 >>>>>>> edd7d2c02bbed96d94edc6902bcbaf9fc314fc3a
@@ -11,9 +11,12 @@
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 #include <iostream>
+#include "point.h"
+#include "circle.h"
 #include <map>
 #include <vector>
 #include <string>
+#include <cmath>
 
 // using namespace std;
 using std::cin;
@@ -195,9 +198,70 @@ void runMap()
     // }
     printMap(zd);
 }
+struct person
+{
+    string m_name;
+    int m_sex;
+    int m_age;
+    string m_id;
+};
+void showMenu()
+{
+    cout << "****************************************" << endl;
+    cout << "**********  1. add  ********************" << endl;
+    cout << "**********  2. show  *******************" << endl;
+    cout << "**********  3. delete  *****************" << endl;
+    cout << "**********  4. query  ******************" << endl;
+    cout << "**********  5. modify  *****************" << endl;
+    cout << "**********  6. clear  ******************" << endl;
+    cout << "**********  0. quit  ******************" << endl;
+    cout << "please input the number:";
+    int choice = 0;
+    cin >> choice;
+    switch (choice)
+    {
+    case 1:
+        break;
+    case 2:
+        break;
+    case 3:
+        break;
+    case 4:
+        break;
+    case 5:
+        break;
+    case 6:
+        break;
+    case 0:
+        break;
+    default:
+        break;
+    }
+}
+void runContact()
+{
+
+    showMenu();
+}
+void runClass()
+{
+    Point p1;
+    p1.set(3.0, 5.0);
+    cout << "(x,y) is (" << p1.getX() << ")," << p1.getY() << ")" << endl;
+    Circle c1;
+    Point p2;
+    p2.set(4.0, 5.0);
+    c1.set(p2, 3.0);
+    Point p3;
+    p3.set(10.0, 10.0);
+    cout << "the center is (" << c1.getCenter().getX() << "," << c1.getCenter().getY() << ")" << endl;
+    bool is_in_or_not = c1.isInCircle(p3);
+}
 int main(int argc, char *argv[])
 {
     // runStruct();
     // runInterp();
-    runMap();
+    // runMap();
+    // runContact();
+    runClass();
 }
