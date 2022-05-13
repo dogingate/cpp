@@ -3,7 +3,7 @@
  * @Date: 2022-05-09 13:15:39
  * @LastEditors: vibration007 dogingate@qq.com
 <<<<<<< HEAD
- * @LastEditTime: 2022-05-12 16:48:51
+ * @LastEditTime: 2022-05-13 13:30:14
 =======
  * @LastEditTime: 2022-05-09 21:30:21
 >>>>>>> edd7d2c02bbed96d94edc6902bcbaf9fc314fc3a
@@ -17,15 +17,21 @@
 #include <vector>
 #include <string>
 #include <cmath>
+#include <fstream>
 
 // using namespace std;
 using std::cin;
 using std::copy;
 using std::cout;
 using std::endl;
+using std::fstream;
+using std::ifstream;
+using std::ios;
 using std::map;
+using std::ofstream;
 using std::string;
 using std::vector;
+
 void bubbleSort(int *arr, int len)
 {
     for (int i = 0; i < len - 1; i++)
@@ -257,11 +263,40 @@ void runClass()
     cout << "the center is (" << c1.getCenter().getX() << "," << c1.getCenter().getY() << ")" << endl;
     bool is_in_or_not = c1.isInCircle(p3);
 }
+void writeFile()
+{
+    ofstream ofs;
+    ofs.open("test.txt", ios::out);
+    ofs << "sb 1" << endl;
+    ofs << "sb 2" << endl;
+    ofs.close();
+}
+void readFile()
+{
+    ifstream ifs;
+    ifs.open("beam1.txt", ios::in);
+    if (!ifs.is_open())
+    {
+        cout << "open file failed";
+        return;
+    }
+    string buf;
+    while (getline(ifs, buf))
+    {
+        cout << buf << endl;
+    }
+    ifs.close();
+}
+void runFile()
+{
+    readFile();
+}
 int main(int argc, char *argv[])
 {
     // runStruct();
     // runInterp();
     // runMap();
     // runContact();
-    runClass();
+    // runClass();
+    runFile();
 }
