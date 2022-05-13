@@ -3,7 +3,7 @@
  * @Date: 2022-05-09 13:15:39
  * @LastEditors: vibration007 dogingate@qq.com
 <<<<<<< HEAD
- * @LastEditTime: 2022-05-13 13:30:14
+ * @LastEditTime: 2022-05-13 14:22:22
 =======
  * @LastEditTime: 2022-05-09 21:30:21
 >>>>>>> edd7d2c02bbed96d94edc6902bcbaf9fc314fc3a
@@ -11,6 +11,7 @@
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 #include <iostream>
+#include <array>
 #include "point.h"
 #include "circle.h"
 #include <map>
@@ -20,6 +21,7 @@
 #include <fstream>
 
 // using namespace std;
+using std::array;
 using std::cin;
 using std::copy;
 using std::cout;
@@ -287,10 +289,20 @@ void readFile()
     }
     ifs.close();
 }
+
+void runArray2()
+{
+    array<int, 5> arr = {2, 16, 17, 34, 50};
+    for (auto it = arr.begin(); it != arr.end(); it++)
+    {
+        cout << ' ' << *it;
+    }
+}
 void runFile()
 {
     readFile();
 }
+
 int main(int argc, char *argv[])
 {
     // runStruct();
@@ -298,5 +310,6 @@ int main(int argc, char *argv[])
     // runMap();
     // runContact();
     // runClass();
-    runFile();
+    // runFile();
+    runArray2();
 }
