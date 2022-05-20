@@ -3,7 +3,7 @@
  * @Date: 2022-05-09 13:15:39
  * @LastEditors: vibration007 dogingate@qq.com
 <<<<<<< HEAD
- * @LastEditTime: 2022-05-13 14:22:22
+ * @LastEditTime: 2022-05-20 14:29:49
 =======
  * @LastEditTime: 2022-05-09 21:30:21
 >>>>>>> edd7d2c02bbed96d94edc6902bcbaf9fc314fc3a
@@ -302,8 +302,18 @@ void runFile()
 {
     readFile();
 }
+void readDataToVector()
+{
+    std::ifstream fin("./data/test.dat");
+    std::vector<double> data;
+    double col1, col2;
+    while (fin >> col1 && in >> col2)
+    {
+        data1.push_back(element);
+    }
+}
 
-int main(int argc, char *argv[])
+int main1(int argc, char *argv[])
 {
     // runStruct();
     // runInterp();
@@ -311,5 +321,6 @@ int main(int argc, char *argv[])
     // runContact();
     // runClass();
     // runFile();
-    runArray2();
+    // runArray2();
+    readDataToVector();
 }
