@@ -2,7 +2,7 @@
  * @Author: vibration007 dogingate@qq.com
  * @Date: 2022-05-20 14:26:48
  * @LastEditors: vibration007 dogingate@qq.com
- * @LastEditTime: 2022-05-20 16:21:15
+ * @LastEditTime: 2022-05-26 11:20:59
  * @FilePath: \cpp\readData.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -12,6 +12,8 @@
 #include <iomanip>
 #include <string>
 #include <vector>
+#include "Eigen/Dense"
+using Eigen::MatrixXd;
 using namespace std;
 
 using TYPE = double;
@@ -34,8 +36,6 @@ vector<vector<T>> loadtxt(const string &filename)
     return data;
 }
 
-//------------------------------------------------
-
 template <typename T>
 void print(const vector<vector<T>> &data)
 {
@@ -47,10 +47,14 @@ void print(const vector<vector<T>> &data)
     }
 }
 
-//======================================================================
-
-int main2()
+MatrixXd transVectorToMatrix(const auto &data)
 {
-    // auto data = loadtxt<double>("./data/test.dat");
+    MatrixXd arr;
+}
+
+int main()
+{
+    auto data = loadtxt<double>("./data/test.dat");
     // print(data);
+    MatrixXd arr = transVectorToMatrix(data);
 }
