@@ -2,7 +2,7 @@
  * @Author: vibration007 dogingate@qq.com
  * @Date: 2022-05-20 14:26:48
  * @LastEditors: vibration007 dogingate@qq.com
- * @LastEditTime: 2022-05-26 11:20:59
+ * @LastEditTime: 2022-05-27 16:38:13
  * @FilePath: \cpp\readData.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -12,6 +12,7 @@
 #include <iomanip>
 #include <string>
 #include <vector>
+#include <stack>
 #include "Eigen/Dense"
 using Eigen::MatrixXd;
 using namespace std;
@@ -52,9 +53,37 @@ MatrixXd transVectorToMatrix(const auto &data)
     MatrixXd arr;
 }
 
+template <typename T>
+void swapNumbers(const T &a, const T &b)
+{
+    // T temp;
+    // temp = a;
+    // a = b;
+    // b = temp;
+    cout << "a is " << a << " b is " << b << endl;
+}
+void testStack()
+{
+    std::stack<int> arr;
+    arr.push(10);
+    arr.push(20);
+    arr.push(30);
+    arr.push(40);
+    arr.push(50);
+    arr.push(60);
+    arr.push(70);
+    while (!arr.empty())
+    {
+        cout << "top element is " << arr.top() << endl;
+        arr.pop();
+    }
+}
+
 int main()
 {
-    auto data = loadtxt<double>("./data/test.dat");
+    // auto data = loadtxt<double>("./data/test.dat");
     // print(data);
-    MatrixXd arr = transVectorToMatrix(data);
+    // swapNumbers(10, 20);
+    testStack();
+    // MatrixXd arr = transVectorToMatrix(data);
 }
